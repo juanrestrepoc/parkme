@@ -15,7 +15,6 @@ export class LoginComponent implements OnInit {
   constructor(private router: Router, private parkMeService: ParkingmeService) { }
 
   ngOnInit() {
-
   }
 
   login(isValid: boolean){
@@ -34,7 +33,6 @@ export class LoginComponent implements OnInit {
     }else{
       console.log('error');
     }
-    
   }
 
 }

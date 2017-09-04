@@ -11,16 +11,35 @@ export class ParkingmeService {
   
   constructor(private http: Http) { 
     this.headers = new Headers();
-    // this.headers.append('Content-Type', 'application/x-www-form-urlencoded');
-    // this.headers.append('Authorization', 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpjcmFtaXJlekB2ZWxvY2l0eXBhcnRuZXJzLm5ldCIsImlhdCI6MTUwNDU1NDg4M30.2ym4J5u7xVelEjzATrknhmQglZQLy6uPsruigRpmPcg');
+    this.headers.append('Content-Type', 'application/x-www-form-urlencoded');
   }
   
-  login (user: Object) {
+  login(user: Object) {
+    let auth = {};
     return this.http
       .post( this.url + `users/login/`, user )
-      .map( (response: Response) => {
+      .map( (response: Response) => { 
+        auth = response.json().auth;
+        this.headers.append('Authorization', 'Bearer ' + auth['token']);
+        localStorage.setItem('currentUser', response.json());
         return response.json();
       }).catch(this._errorHandler);
+  }
+
+  registerUser (user: Object) {
+    return this.http
+      .post( this.url + `users/`, user )
+      .map( (response: Response) => { 
+        return response.json();
+      }).catch(this._errorHandler);
+  }
+
+  getUser(){
+    return this.http
+    .get( this.url + `users/`)
+    .map( (response: Response) => { 
+      return response.json();
+    }).catch(this._errorHandler);
   }
 
   _errorHandler(_error: Response) {

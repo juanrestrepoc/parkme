@@ -1,59 +1,44 @@
 <div class="container">
-
   <div class="d-flex flex-row">
-
-    <div class="col-sm-6">
-
-
+    <div class="col-sm-6 col-xs-12">
       <div class="d-flex justify-content-center">
         <div class="panel panel-default login-panel">
           <div class="row panel-heading">
           </div>
           <form accept-charset="UTF-8" role="form" class="form-signin">
-
             <div class="form-group">
               <label>Full Name</label>
               <input class="form-control" [(ngModel)]="fullname" required maxlength="20" name="fullname" type="text">
             </div>
-
             <div class="form-group">
               <label>Identification</label>
               <input class="form-control" [(ngModel)]="identification" required name="identification" type="number" value="">
             </div>
-
             <div class="select-padding">
-
               <label>Type of Vehicule
-                      <br>  
-                      <select  class="selectpicker"  [(ngModel)]="typeVehicle" name="typeVehicle" >
-                              <option value="Car">Car</option>
-                              <option value="Motorbike">Motorbike</option>
-                              <option value="Bicycle">Bicycle</option>                                                 
-                      </select>
-                      </label>
+                <br>  
+                <select  class="selectpicker"  [(ngModel)]="typeVehicle" name="typeVehicle" >
+                        <option value="Car">Car</option>
+                        <option value="Motorbike">Motorbike</option>
+                        <option value="Bicycle">Bicycle</option>                                                 
+                </select>
+              </label>
             </div>
-
             <div class="form-group">
               <label>Plate</label>
               <input class="form-control" [(ngModel)]="plate" name="plate" type="text" value="">
             </div>
-
             <div class="form-group">
               <label>Description Vehicle</label>
               <input class="form-control" [(ngModel)]="description" name="description" type="text" value="">
             </div>
-
-            <input (click)="add()" class="btn btn-lg btn-primary btn-block " type="submit" value="Add">
-
-            <br>
           </form>
         </div>
       </div>
     </div>
 
-    <div class="col-sm-6">
+    <div class="col-sm-6 col-xs-12">
       <table class="table">
-
         <thead>
           <tr>
             <th>Type of Vehicle</th>
@@ -72,10 +57,10 @@
       </table>
     </div>
   </div>
-
   <br>
-
   <div class="d-flex flex-row">
     <div class="col-sm-4"> </div>
     <input class="btn btn-lg btn-primary btn-block " type="submit" value="Register">
     <div class="col-sm-4"> </div>
+  </div>
+</div>
