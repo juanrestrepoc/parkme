@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ParkingmeService } from '../../services/parkingme.service';
 import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-register',
@@ -37,9 +39,8 @@ export class RegisterComponent implements OnInit {
   
 
   delete(vehicle){
-    
-  let index = this.listVehicle.indexOf(vehicle);
-  this.listVehicle.splice(index,1);  
+    let index = this.listVehicle.indexOf(vehicle);
+    this.listVehicle.splice(index,1);  
   }
 
   ngOnInit() {

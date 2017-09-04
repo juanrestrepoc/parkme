@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ParkingmeService } from '../../services/parkingme.service';
 
 import { DialogService } from "ng2-bootstrap-modal";
 
@@ -10,12 +11,26 @@ import { TimeModalComponent } from './../time-modal/time-modal.component';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent{
+export class HomeComponent implements OnInit {
+  userInfo: any = {};
+  constructor(private parkMeService: ParkingmeService, private dialogService:DialogService) { }
 
-  constructor(private dialogService:DialogService) { }
+  ngOnInit() {
+    this.userInfo = this.getUser();
+    console.log(this.userInfo)
+    console.log(localStorage.getItem('currentUser'))
+  }
 
+  getUser(){
+    this.parkMeService.getUser().subscribe((response) => {
+     console.log(response)
+    }, resFileError => {
+    console.log(JSON.parse(resFileError['_body']));
+    });
+  }
+  
   showConfirm() {
     let disposable = this.dialogService.addDialog(TimeModalComponent, {});
-
   }
 }
+
