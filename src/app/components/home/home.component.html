@@ -36,7 +36,7 @@
         <div class="button-container">
           <div class="row">
             <div class="col-md-6 col-xs-12">
-              <button class="btn free"> Free Lot </button>
+              <button class="btn free" (click)="showConfirm()"> Free Lot </button>
             </div>
             <div class="col-md-6 col-xs-12">
                 <button class="btn reserve"> Reserve Lot</button>
@@ -49,7 +49,7 @@
   <div class="update-container">
     <div class="row">
       <div class="col col-xs-12">
-        <button class="btn update"> Update user </button>
+        <button class="btn update" type="button" [routerLink] = "['/register']"> Update user </button>
       </div>
     </div>
   </div>
