@@ -9,12 +9,12 @@ import { NavComponent } from './components/nav/nav.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { LoginComponent } from './components/login/login.component';
 import { DummyComponent } from './components/dummy/dummy.component';
-
+import { RegisterComponent } from './components/register/register.component';
 
 const appRoutes: Routes = [
   {path: '', component: LoginComponent},
   {path: 'home', component: HomeComponent},
-  {path: 'dummy', component: DummyComponent}
+  {path: 'register', component: RegisterComponent}
 ];
 
 @NgModule({
@@ -24,7 +24,8 @@ const appRoutes: Routes = [
     NavComponent,
     FooterComponent,
     LoginComponent,
-    DummyComponent
+    DummyComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
