@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -15,7 +16,7 @@ export class RegisterComponent implements OnInit {
   listVehicle:any [];
 
 
-  constructor() {
+  constructor(private router: Router) {
     this.listVehicle = [];
    }
 
@@ -42,6 +43,10 @@ export class RegisterComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  register(){
+    this.router.navigateByUrl('/home');
   }
 
 }
