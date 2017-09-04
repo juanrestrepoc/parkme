@@ -10,7 +10,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { LoginComponent } from './components/login/login.component';
 import { DummyComponent } from './components/dummy/dummy.component';
 import { ParkingmeService } from './services/parkingme.service';
-
+import { HttpModule } from '@angular/http';
 
 const appRoutes: Routes = [
   {path: '', component: LoginComponent},
@@ -30,7 +30,8 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
-    FormsModule
+    FormsModule,
+    HttpModule
   ],
   providers: [ ParkingmeService ],
   bootstrap: [AppComponent]

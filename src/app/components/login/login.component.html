@@ -6,7 +6,7 @@
 					<img src="../../assets/images/parkme.png" width="100px" height="100px">
 				</div>
 			</div>
-			<form id="login-form">
+			<form #loginForm="ngForm"  id="login-form" (ngSubmit)="login(loginForm.valid)" novalidate>
 				<div class="form-group">
 					<label for="">Email
 						<input class="form-control" placeholder="Email" [(ngModel)]="email" name="email" type="text" required>
@@ -17,7 +17,7 @@
 						<input class="form-control" placeholder="Password" [(ngModel)]="password" name="password" type="password" value="" required>
 					</label>
 			</div>
-				<input class="btn btn-lg btn-primary btn-block " type="submit" value="Login" (click)="login()">
+				<input class="btn btn-lg btn-primary btn-block" type="submit" value="Login" [disabled]="!loginForm.form.valid">
 				<br>
 				<div class="row">
 					<a class="col-sm-4 mr-4" [routerLink] = "['/dummy']">Register</a>
