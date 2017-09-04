@@ -1,9 +1,47 @@
+body {
+    background: #eae8e8;
+}
+
+.container {
+    padding-bottom: 60px;
+}
+
 .btn-primary {
     color: #fff;
     background-color: #008cdb;
     border-color: #008cdb;
 }
 
+.center-panel {
+    min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+    min-height: 100vh; /* These two lines are counted as one :-)       */
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .login-panel {
-    background-color: #ddd;
+    background: #fff;
+    box-shadow: 5px 5px 5px #ddd;
+    padding: 2.5em;
+    border: 1px solid #ddd;
+    width: 300px;
+    
+    .panel-heading {
+        .logo {
+            margin: 10px auto 20px auto;
+            text-align: center;
+            width: 100%;
+        }
+        
+    }
+}
+
+/* Responsive */
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+    .container {
+        padding: 0 25px 0 10px;
+    }
 }
