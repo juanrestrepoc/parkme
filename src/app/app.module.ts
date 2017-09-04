@@ -10,10 +10,16 @@ import { FooterComponent } from './components/footer/footer.component';
 import { LoginComponent } from './components/login/login.component';
 import { DummyComponent } from './components/dummy/dummy.component';
 
+
 import { RegisterComponent } from './components/register/register.component';
 
-import { ParkingmeService } from './services/parkingme.service';
 import { HttpModule } from '@angular/http';
+
+import { TimeModalComponent } from './components/time-modal/time-modal.component';
+import { ParkingmeService } from './services/parkingme.service';
+
+import { BootstrapModalModule } from 'ng2-bootstrap-modal';
+
 
 const appRoutes: Routes = [
   {path: '', component: LoginComponent},
@@ -29,13 +35,18 @@ const appRoutes: Routes = [
     FooterComponent,
     LoginComponent,
     DummyComponent,
+    TimeModalComponent,
     RegisterComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
     FormsModule,
+    BootstrapModalModule,
     HttpModule
+  ],
+  entryComponents: [
+    TimeModalComponent
   ],
   providers: [ ParkingmeService ],
   bootstrap: [AppComponent]
