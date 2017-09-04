@@ -5,7 +5,7 @@
     top: 6px;
   }
   .subtitle {
-    margin-left: 20px;
+    margin-left: 25px;
   }
   .user-container {
     margin: 2.5em 0;
@@ -13,17 +13,25 @@
   .vehicle-container {
     .panel {
       border: 1px solid #ddd;
-      width: 50%;
-
+      border-radius: 5px;
+      
       .panel-heading {
         border-bottom: 1px solid #ddd;
         margin-bottom: 1em;
         padding: 1em;
+        background: #008cdb;
+        color: #fff;
+        border-radius: 5px 5px 0 0px;
+
+        .icon {
+          color: #fff;
+        }
       }
       .panel-body {
         padding: 2em;
         
         .button-container {
+          text-align: center;
           .free {
             background: transparent;
             border: 1px solid #fd693a;
@@ -45,10 +53,11 @@
       color: #f5f5f5;
     }
   }
-
-  
-
 }
 
-
+/* Responsive */
+// Small devices (landscape phones, 576px and up)
+@media (max-width: 436px) {
+  
+}
 

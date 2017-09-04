@@ -9,6 +9,7 @@ import { NavComponent } from './components/nav/nav.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { LoginComponent } from './components/login/login.component';
 import { DummyComponent } from './components/dummy/dummy.component';
+import { ParkingmeService } from './services/parkingme.service';
 
 
 const appRoutes: Routes = [
@@ -31,7 +32,7 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     FormsModule
   ],
-  providers: [],
+  providers: [ ParkingmeService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
