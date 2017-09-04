@@ -1,10 +1,10 @@
-import { ParkmePage } from './app.po';
+import { MyAppPage } from './app.po';
 
-describe('parkme App', () => {
-  let page: ParkmePage;
+describe('my-app App', () => {
+  let page: MyAppPage;
 
   beforeEach(() => {
-    page = new ParkmePage();
+    page = new MyAppPage();
   });
 
   it('should display welcome message', () => {
