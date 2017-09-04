@@ -9,6 +9,9 @@ import { NavComponent } from './components/nav/nav.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { LoginComponent } from './components/login/login.component';
 import { DummyComponent } from './components/dummy/dummy.component';
+import { TimeModalComponent } from './components/time-modal/time-modal.component';
+
+import { BootstrapModalModule } from 'ng2-bootstrap-modal';
 
 
 const appRoutes: Routes = [
@@ -24,12 +27,17 @@ const appRoutes: Routes = [
     NavComponent,
     FooterComponent,
     LoginComponent,
-    DummyComponent
+    DummyComponent,
+    TimeModalComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
-    FormsModule
+    FormsModule,
+    BootstrapModalModule
+  ],
+  entryComponents: [
+    TimeModalComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

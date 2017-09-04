@@ -1,0 +1,45 @@
+<div class="modal-dialog">
+    <div class="modal-content">
+       <div class="modal-header">
+         <h4 class="modal-title">Select Date</h4>
+         <button type="button" class="close" (click)="close()" >&times;</button>
+       </div>
+       <div class="modal-body">
+         <div class="container">
+          <div class="row">
+            <button name="today" class="col align-self-center btn btn-primary" (click)="confirm()">Today</button>
+          </div>
+          <br>
+          <div class="container">
+            <h5 class="row col-12">Date Range</h5>
+              <div class="row">
+                <label class="col" for="start">Start Date</label>
+                <input class="col" name="start" type="date">
+              </div>
+              <div class="row">
+                  <label class="col" for="end">End Date</label>
+                  <input class="col" id="end" name="end" type="date">
+                </div>
+            </div>
+            <div class="container">
+              <h5 class="row col-12">Week Days</h5>
+              <div class="col checkbox">
+                <input type="checkbox">
+                <input type="checkbox">
+                <input type="checkbox">
+                <input type="checkbox">
+                <input type="checkbox">
+              </div>
+              <div class="col">
+                <p>M T W Th F</p>
+                
+              </div>
+            </div>
+         </div>
+       </div>
+       <div class="modal-footer">
+         <button type="button" class="btn btn-primary" (click)="confirm()">OK</button>
+         <button type="button" class="btn btn-default" (click)="close()" >Cancel</button>
+       </div>
+     </div>
+  </div>
