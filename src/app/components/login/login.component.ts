@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
   login(){
     console.log(this.email);
     console.log(this.password);
-    this.router.navigateByUrl('/dummy');
+    this.router.navigateByUrl('/home');
   }
 
 }
