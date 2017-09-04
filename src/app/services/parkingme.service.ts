@@ -28,5 +28,4 @@ export class ParkingmeService {
     return Observable.throw( _error );
   }
 
-
 }
