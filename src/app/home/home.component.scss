@@ -1,0 +1,54 @@
+.home {
+  .icon {
+    color: #008cdb;
+    position: absolute;
+    top: 6px;
+  }
+  .subtitle {
+    margin-left: 20px;
+  }
+  .user-container {
+    margin: 2.5em 0;
+  }
+  .vehicle-container {
+    .panel {
+      border: 1px solid #ddd;
+      width: 50%;
+
+      .panel-heading {
+        border-bottom: 1px solid #ddd;
+        margin-bottom: 1em;
+        padding: 1em;
+      }
+      .panel-body {
+        padding: 2em;
+        
+        .button-container {
+          .free {
+            background: transparent;
+            border: 1px solid #fd693a;
+          }
+          .reserve {
+            background: #fd693a;
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+
+  .update-container {
+    margin: 2em;
+    text-align: center;
+    .update{
+      background: #008cdb;
+      color: #f5f5f5;
+    }
+  }
+
+  
+
+}
+
+
+
