@@ -9,6 +9,7 @@ import { NavComponent } from './components/nav/nav.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { LoginComponent } from './components/login/login.component';
 import { DummyComponent } from './components/dummy/dummy.component';
+import { HttpModule } from '@angular/http';
 
 import { TimeModalComponent } from './components/time-modal/time-modal.component';
 import { ParkingmeService } from './services/parkingme.service';
@@ -36,7 +37,8 @@ const appRoutes: Routes = [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
     FormsModule,
-    BootstrapModalModule
+    BootstrapModalModule,
+    HttpModule
   ],
   entryComponents: [
     TimeModalComponent
