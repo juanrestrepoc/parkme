@@ -8,17 +8,18 @@ import { ParkingmeService } from '../../services/parkingme.service';
 })
 export class HomeComponent implements OnInit {
   userInfo: any = {};
+  userLocalStorage: any = {};
   constructor(private parkMeService: ParkingmeService) { }
 
   ngOnInit() {
-    this.userInfo = this.getUser();
-    console.log(this.userInfo)
-    console.log(localStorage.getItem('currentUser'))
+    this.userLocalStorage = localStorage.getItem('currentUser');
+    this.getUser();
   }
 
   getUser(){
     this.parkMeService.getUser().subscribe((response) => {
-     console.log(response)
+      this.userInfo = response;console.log(this.userInfo);
+      console.log(this.userInfo)
     }, resFileError => {
     console.log(JSON.parse(resFileError['_body']));
     });
