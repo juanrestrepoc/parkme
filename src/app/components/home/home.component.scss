@@ -14,7 +14,9 @@
     .panel {
       border: 1px solid #ddd;
       border-radius: 5px;
-      
+      box-shadow: 3px 3px 5px #ddd;
+      padding: 0;
+
       .panel-heading {
         border-bottom: 1px solid #ddd;
         margin-bottom: 1em;
@@ -41,6 +43,7 @@
             color: #fff;
           }
         }
+        
       }
     }
   }
@@ -57,7 +60,20 @@
 
 /* Responsive */
 // Small devices (landscape phones, 576px and up)
-@media (max-width: 436px) {
-  
+@media (max-width: 765px) {
+  .button-container {
+    button {
+      margin-bottom: 5px;
+    }
+  }
+}
+
+@media (max-width: 536px) {
+  .button-container {
+    button {
+      width: 100%;
+      margin-bottom: 5px;
+    }
+  }
 }
 

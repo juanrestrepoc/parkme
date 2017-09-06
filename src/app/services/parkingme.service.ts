@@ -1,17 +1,20 @@
 import { Injectable } from '@angular/core';
-import { Http, Response } from '@angular/http';
+import { Http, Response, Headers} from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 
 @Injectable()
 export class ParkingmeService {
-  headers: Headers;
   private url = 'http://192.168.61.5:1337/api/v1/';
   
   constructor(private http: Http) { 
-    this.headers = new Headers();
-    this.headers.append('Content-Type', 'application/x-www-form-urlencoded');
+    
+  }
+
+  createAuthorizationHeader(headers: Headers, auth) {
+    headers.append('Content-Type', 'application/json');
+    headers.append('Authorization', 'Bearer ' + auth['token']);
   }
   
   login(user: Object) {
@@ -20,8 +23,8 @@ export class ParkingmeService {
       .post( this.url + `users/login/`, user )
       .map( (response: Response) => { 
         auth = response.json().auth;
-        this.headers.append('Authorization', 'Bearer ' + auth['token']);
-        localStorage.setItem('currentUser', response.json());
+        console.log(response.json())
+        localStorage.setItem('currentUser', JSON.stringify(response.json()));
         return response.json();
       }).catch(this._errorHandler);
   }
@@ -35,8 +38,11 @@ export class ParkingmeService {
   }
 
   getUser(){
+    let headers = new Headers();
+    let auth =  JSON.parse(localStorage.getItem('currentUser'));
+    this.createAuthorizationHeader(headers, auth['auth']);
     return this.http
-    .get( this.url + `users/`)
+    .get( this.url + `users/`+ auth['id'])
     .map( (response: Response) => { 
       return response.json();
     }).catch(this._errorHandler);
